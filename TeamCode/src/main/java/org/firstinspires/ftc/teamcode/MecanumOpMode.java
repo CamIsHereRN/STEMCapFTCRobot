@@ -32,12 +32,13 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-import edu.spa.ftclib.internal.drivetrain.MecanumDriveTrain;
+//import edu.spa.ftclib.internal.drivetrain.MecanumDriveTrain;
 
 /*
  * This file contains an minimal example of a Linear "OpMode". An OpMode is a 'program' that runs in either
@@ -53,10 +54,10 @@ import edu.spa.ftclib.internal.drivetrain.MecanumDriveTrain;
  */
 
 @TeleOp(name="Mecanum OpMode", group="OpMode")
-//@Disabled
+@Disabled
 public class MecanumOpMode extends OpMode {
     private DcMotor frontLeft, frontRight, backLeft, backRight;
-    private MecanumDriveTrain driveTrain;
+//    private MecanumDriveTrain driveTrain;
     
     @Override
     public void init() {
@@ -68,7 +69,7 @@ public class MecanumOpMode extends OpMode {
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
 
-        driveTrain = new MecanumDriveTrain(new DcMotor[]{frontLeft,frontRight,backLeft,backRight});
+//        driveTrain = new MecanumDriveTrain(new DcMotor[]{frontLeft,frontRight,backLeft,backRight});
     }
 
     @Override
@@ -77,9 +78,9 @@ public class MecanumOpMode extends OpMode {
         double velocity = Math.hypot(gamepad1.right_stick_x, gamepad1.right_stick_y);
         double rotation = -gamepad1.left_stick_x;
 
-        drivetrain.setCourse(course);
-        drivetrain.setVelocity(velocity);
-        drivetrain.setRotation(rotation);
+//        drivetrain.setCourse(course);
+//        drivetrain.setVelocity(velocity);
+//        drivetrain.setRotation(rotation);
 
         telemetry.addData("course", course);
         telemetry.addData("velocity", velocity);
